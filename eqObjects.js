@@ -16,33 +16,32 @@ const eqArrays = function(expectedArr, actualArr) {
 };
 
 const eqObjects = function(object1, object2) {
-// 1. Get the keys and store in keys1 and keys2 using Object.keys, which stores as an array.
+// 1. 
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
 
-// 2. Check to see if both objects have the same amount of keys.
+// 2.
   if (keys1.length !== keys2.length) {
     return false;
   }
 
 
-  // 3. Loop through the keys in object1.
+  // 3.
   for (let key of keys1) {
-    // 4. Check to see if the key from both objects are arrays.
+    // 4.
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-        // 5. If both keys are arrays, eqArrays will determine if their values match.
+        // 5.
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
     } else {
-        // 6. If both keys are not arrays, their values are compared primitively (directly).
+        // 6.
       if (object1[key] !== object2[key]) {
         return false;
       }
     }
   }
-  // 7. If both objects have the same amount of keys, keys in each array are indeed arrays, and their values
-  // match, then both objects match and will return true.
+  // 7.
   return true;
 };
 
@@ -64,3 +63,19 @@ console.log(assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShir
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 console.log(assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false));
+
+//How it works:
+// 1. Get the keys and store in keys1 and keys2 using Object.keys, which stores as an array.
+
+// 2. Check to see if both objects have the same amount of keys.
+
+// 3. Loop through the keys in object1.
+
+// 4. Check to see if the key from both objects are arrays.
+
+// 5. If both keys are arrays, eqArrays will determine if their values match.
+
+// 6. If both keys are not arrays, their values are compared primitively (directly).
+
+// 7. If both objects have the same amount of keys, keys in each array are indeed arrays, and their values
+// match, then both objects match and will return true.
