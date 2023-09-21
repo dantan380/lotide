@@ -16,24 +16,33 @@ const eqArrays = function(expectedArr, actualArr) {
 };
 
 const eqObjects = function(object1, object2) {
+// 1. Get the keys and store in keys1 and keys2 using Object.keys, which stores as an array.
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
 
+// 2. Check to see if both objects have the same amount of keys.
   if (keys1.length !== keys2.length) {
     return false;
   }
 
+
+  // 3. Loop through the keys in object1.
   for (let key of keys1) {
+    // 4. Check to see if the key from both objects are arrays.
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+        // 5. If both keys are arrays, eqArrays will determine if their values match.
       if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
     } else {
+        // 6. If both keys are not arrays, their values are compared primitively (directly).
       if (object1[key] !== object2[key]) {
         return false;
       }
     }
   }
+  // 7. If both objects have the same amount of keys, keys in each array are indeed arrays, and their values
+  // match, then both objects match and will return true.
   return true;
 };
 
