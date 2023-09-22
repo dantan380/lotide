@@ -7,15 +7,14 @@ const assertEqual = function(actual, expected) {
     }
   };
 
-  const findKey = function(object, callback){
-    const objectKeys = Object.keys(object);
-    console.log(objectKeys);
-    for (let key of objectKeys){
-        if(!callback(object[key])){
-            continue
+  const findKey = function(object, callback){  //findKey will take in an object and a callback as parameters.
+    const objectKeys = Object.keys(object); //objectKeys will contain all keys from the given object.
+    for (let key of objectKeys){  //For every key...
+        if(!callback(object[key])){  //If the callback function does not produce a truthy result based on the key,
+            continue                 //continue the to the next key.
         } else {
-            return key;
-        }
+            return key;             //If the callback function produces a truthy result based on that key, 
+        }                           //return that key.
     }
   }
 
@@ -28,3 +27,12 @@ const assertEqual = function(actual, expected) {
     "Akelarre":  { stars: 3 }
   }, x => x.stars === 2)
   console.log(result1);
+
+  console.log(assertEqual(result1, "noma"));
+
+  const result2 = findKey({
+    "Patrick": {color: "pink"},
+    "Spongebob": {color: "yellow"},
+    "Squidward": {color: "blue"}
+  }, x => x.color === "yellow");
+  console.log(result2);
