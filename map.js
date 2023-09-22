@@ -27,6 +27,7 @@ const map = function(array, callback) {
   return results;
 };
 
+//Tester code:
 const results1 = map(words, word => word[0]);
 console.log(results1);
 
