@@ -30,12 +30,12 @@ const map = function(array, callback) {
 const results1 = map(words, word => word[0]);
 console.log(results1);
 
-console.log(assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]))
+console.log(assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]));
 
 const results2 = map(nums, num => num[0]);
 console.log(results2);
 
-console.log(assertArraysEqual(results2, ["1", "2", "3", "4"]))
+console.log(assertArraysEqual(results2, ["1", "2", "3", "4"]));
 
 const results3 = map(finalTest, final => `${final}y`);
 console.log(results3);
