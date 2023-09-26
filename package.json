@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@dantan380/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "Clone of Lodash, Lotide",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/dantan380/lotide.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["assert", "lodash", "mocha", "chai"],
+  "author": "@dantan380",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dantan380/lotide/issues"
