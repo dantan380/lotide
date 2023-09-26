@@ -1,5 +1,3 @@
-// Function to check if the type and value of elements in the array match.
-const assertArraysEqual = require('./assertArraysEqual');
 // eqArrays function defined outside of assertArraysEqual to check if each element in the array
 // matches in type and value. This allows it to be accessible by without function.
 const eqArrays = require('./eqArrays');
