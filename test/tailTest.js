@@ -9,11 +9,4 @@ describe("#tail", () => {
     it("returns [2, 3] for [1, 2, 3]", () => {
         assert.deepEqual(tail([1, 2, 3]), [2, 3]);
     })
-  
   });
-
-
-/*Test code to check if "tail" is not modifying the original array.
-const words = ["hey", "there", "stranger"];
-console.log(tail(words));
-console.log(assertEqual(words.length, 3));*/
